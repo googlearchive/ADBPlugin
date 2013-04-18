@@ -9,17 +9,28 @@
 
 #include "ADBPluginAPI.h"
 
-FB::variant ADBPluginAPI::isRunning() {
-    FB::variant r =
-        shell("echo '000Chost:devices' | telnet 127.0.0.1 5037 2>/dev/null");
-    std::string r_as_string = r.cast<std::string>();
-    if (r_as_string.find("Connected to localhost") == std::string::npos) {
-        return FB::variant(false);
-    }
-    return FB::variant(true);
+FB::variant ADBPluginAPI::isServerRunning()
+{
+    std::string result = shell("echo '000Chost:devices' | telnet 127.0.0.1 5037 2>/dev/null");
+    return result.find("Connected to localhost") != std::string::npos;
 }
 
-FB::variant ADBPluginAPI::shell(const std::string& command)
+FB::variant ADBPluginAPI::startServer()
+{
+    return adb("start-server");
+}
+
+FB::variant ADBPluginAPI::killServer()
+{
+    return adb("kill-server");
+}
+
+FB::variant ADBPluginAPI::devices()
+{
+    return adb("devices");
+}
+
+std::string ADBPluginAPI::shell(const std::string& command)
 {
     FILE * pPipe;
     fd_set readfd;
@@ -35,7 +46,7 @@ FB::variant ADBPluginAPI::shell(const std::string& command)
     return response;
 }
 
-FB::variant ADBPluginAPI::adb(const std::string& command)
+std::string ADBPluginAPI::adb(const std::string& command)
 {
     std::string plugin_path = getPlugin()->getFilesystemPath();
     for (int i = 0; i < 4; ++i)

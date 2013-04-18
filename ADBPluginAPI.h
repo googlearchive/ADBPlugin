@@ -18,19 +18,24 @@ public:
     ADBPluginAPI(const ADBPluginPtr& plugin, const FB::BrowserHostPtr& host) :
         m_plugin(plugin), m_host(host)
     {
-        registerMethod("isRunning", make_method(this, &ADBPluginAPI::isRunning));
-        registerMethod("adb", make_method(this, &ADBPluginAPI::adb));
+        registerMethod("isServerRunning", make_method(this, &ADBPluginAPI::isServerRunning));
+        registerMethod("startServer", make_method(this, &ADBPluginAPI::startServer));
+        registerMethod("killServer", make_method(this, &ADBPluginAPI::killServer));
+        registerMethod("devices", make_method(this, &ADBPluginAPI::devices));
     }
 
     virtual ~ADBPluginAPI() {};
 
     ADBPluginPtr getPlugin();
 
-    FB::variant isRunning();
-    FB::variant adb(const std::string& command);
+    FB::variant isServerRunning();
+    FB::variant startServer();
+    FB::variant killServer();
+    FB::variant devices();
 
 private:
-    FB::variant shell(const std::string& command);
+    std::string shell(const std::string& command);
+    std::string adb(const std::string& command);
 
     ADBPluginWeakPtr m_plugin;
     FB::BrowserHostPtr m_host;
