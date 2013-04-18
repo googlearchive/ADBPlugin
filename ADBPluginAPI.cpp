@@ -9,6 +9,16 @@
 
 #include "ADBPluginAPI.h"
 
+FB::variant ADBPluginAPI::isRunning() {
+    FB::variant r =
+        shell("echo '000Chost:devices' | telnet 127.0.0.1 5037 2>/dev/null");
+    std::string r_as_string = r.cast<std::string>();
+    if (r_as_string.find("Connected to localhost") == std::string::npos) {
+        return FB::variant(false);
+    }
+    return FB::variant(true);
+}
+
 FB::variant ADBPluginAPI::shell(const std::string& command)
 {
     FILE * pPipe;
