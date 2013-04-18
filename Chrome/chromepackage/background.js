@@ -14,8 +14,8 @@ chrome.browserAction.onClicked.addListener(function() {
 });
 
 function update(oneTime) {
-  var result = plugin.shell("echo '000Chost:devices' | telnet 127.0.0.1 5037 2>/dev/null");
-  if (result.indexOf("Connected to localhost") != -1) {
+  var result = plugin.isRunning();
+  if (result) {
     running = true;
       chrome.browserAction.setIcon({
         path: {

@@ -1,4 +1,4 @@
-#/**********************************************************\ 
+#/**********************************************************\
 #
 # Auto-Generated Plugin Configuration file
 # for ADB
@@ -12,7 +12,7 @@ set(COMPANY_NAME "Chromium")
 # strings
 set(FBSTRING_CompanyName "Chromium")
 set(FBSTRING_PluginDescription "ADB Daemon Plugin")
-set(FBSTRING_PLUGIN_VERSION "0.9.0")
+set(FBSTRING_PLUGIN_VERSION "0.9.1")
 set(FBSTRING_LegalCopyright "Copyright 2013 Chromium Authors")
 set(FBSTRING_PluginFileName "np${PLUGIN_NAME}")
 set(FBSTRING_ProductName "ADB")

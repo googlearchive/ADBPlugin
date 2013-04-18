@@ -18,7 +18,7 @@ public:
     ADBPluginAPI(const ADBPluginPtr& plugin, const FB::BrowserHostPtr& host) :
         m_plugin(plugin), m_host(host)
     {
-        registerMethod("shell", make_method(this, &ADBPluginAPI::shell));
+        registerMethod("isRunning", make_method(this, &ADBPluginAPI::isRunning));
         registerMethod("adb", make_method(this, &ADBPluginAPI::adb));
     }
 
@@ -26,10 +26,11 @@ public:
 
     ADBPluginPtr getPlugin();
 
-    FB::variant shell(const std::string& command);
+    FB::variant isRunning();
     FB::variant adb(const std::string& command);
 
 private:
+    FB::variant shell(const std::string& command);
 
     ADBPluginWeakPtr m_plugin;
     FB::BrowserHostPtr m_host;
