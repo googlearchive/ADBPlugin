@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+body {
+  width: 120px;
+  cursor: default;
+  padding: 0;
+  margin: 4px 0;
+}
+
+div.item {
+  color: black;
+  padding-left: 16px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+div.item:not(.disabled):hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(101, 140, 245)), to(rgb(41, 103, 242)));
+  border-top: 1px solid rgb(25, 91, 232);
+  border-bottom: 1px solid rgb(25, 91, 232);
+  color: white;
+}
+
+div.item.disabled {
+  color: rgb(150, 150, 150);
+}
+
+div.separator {
+  border-bottom: 1px solid rgb(228, 228, 228);
+  margin: 3px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+<div id="devices" class="item">View Devices</div>
+<div class="separator"></div>
+<div id="start" class="item">Start ADB</div>
+<div id="stop" class="item">Stop ADB</div>
+</body>
+
+<script type="text/javascript" src="popup.js"></script>
+
+</html>

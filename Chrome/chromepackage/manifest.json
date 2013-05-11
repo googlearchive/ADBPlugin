@@ -12,7 +12,8 @@
       "19": "off_19.png",
       "38": "off_38.png"
     },
-    "default_title": "Start ADB"
+    "default_title": "Start ADB",
+    "default_popup": "popup.html"
   },
   "plugins": [
     { "path": "ADB_x86_64.plugin", "public": true }
