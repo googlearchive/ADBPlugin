@@ -7,7 +7,7 @@ var plugin = document.getElementById('adb-plugin');
 chrome.browserAction.setBadgeBackgroundColor({color: '#070'});
 
 function update(oneTime) {
-  if (plugin.isServerRunning()) {
+  if (isServerRunning()) {
     chrome.browserAction.setIcon({
       path: {
         19: 'on_19.png',
@@ -44,6 +44,7 @@ function update(oneTime) {
 update();
 
 function start() {
+  plugin.setAttribute('data-local-port',null);
   setTimeout(function() { plugin.startServer(); });
 }
 
@@ -52,9 +53,22 @@ function stop() {
 }
 
 function isServerRunning() {
-  return plugin.isServerRunning();
+  return ('isServerRunning' in plugin) && plugin.isServerRunning();
 }
 
 function devices() {
-  chrome.tabs.create({url:'chrome://inspect'});
+  var port = getCurrentPort();
+  var url  = (port ? 'localhost:'+port : 'chrome://inspect');
+  chrome.tabs.create({url:url});
+}
+
+function forward(port) {
+  if (port != getCurrentPort()) {
+    plugin.setAttribute('data-local-port', port.toString());
+    plugin.forward(port);
+  }
+}
+
+function getCurrentPort() {
+  return plugin.getAttribute('data-local-port');
 }

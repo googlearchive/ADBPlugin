@@ -1,0 +1,52 @@
+html, body {
+  width: 130px;
+  max-height: 130px;
+  cursor: default;
+  padding: 0;
+}
+
+body {
+  margin: 4px 0;
+  font-family: Arial, sans-serif;
+}
+
+div.item, div.item-no-hover {
+  color: black;
+  padding-left: 10px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  background-image: none;
+}
+
+div.item:not(.disabled):hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(101, 140, 245)), to(rgb(41, 103, 242)));
+  border-top: 1px solid rgb(25, 91, 232);
+  border-bottom: 1px solid rgb(25, 91, 232);
+  color: white;
+}
+
+div.item.disabled , div.item-no-hover.disabled {
+  color: rgb(150, 150, 150);
+}
+
+div.separator {
+  border-bottom: 1px solid rgb(228, 228, 228);
+  margin: 3px 0;
+}
+
+div#note {
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fde073;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 5px black;
+}
+
+.hidden {
+  display: none;
+}

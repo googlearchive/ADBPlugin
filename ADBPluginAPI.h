@@ -22,6 +22,7 @@ public:
         registerMethod("startServer", make_method(this, &ADBPluginAPI::startServer));
         registerMethod("killServer", make_method(this, &ADBPluginAPI::killServer));
         registerMethod("devices", make_method(this, &ADBPluginAPI::devices));
+        registerMethod("forward", make_method(this, &ADBPluginAPI::forward));
     }
 
     virtual ~ADBPluginAPI() {};
@@ -32,10 +33,12 @@ public:
     FB::variant startServer();
     FB::variant killServer();
     FB::variant devices();
+    FB::variant forward(const std::string& port);
 
 private:
     std::string shell(const std::string& command);
     std::string adb(const std::string& command);
+    std::string dirname(const std::string& command);
 
     ADBPluginWeakPtr m_plugin;
     FB::BrowserHostPtr m_host;
