@@ -32,7 +32,7 @@ FB::variant ADBPluginAPI::devices()
 
 FB::variant ADBPluginAPI::forward(const std::string& port)
 {
-    return adb("forward tcp:" + port + " localabstract:chrome_devtools_remote");
+    return adb("forward\\ tcp:" + port + "\\ localabstract:chrome_devtools_remote");
 }
 
 std::string ADBPluginAPI::shell(const std::string& command)
