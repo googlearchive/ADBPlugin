@@ -1,8 +1,8 @@
 # ADB Plugin
 
-ADB Plugin is a Chrome Extension that runs ADB daemon and enables remote debugging for mobile. With it, you do not need to download the Android SDK or run ADB yourself from the command line. This extension is experimental and currently only works on Mac.
+ADB Plugin is a Chrome Extension that runs ADB daemon and enables remote debugging for mobile. With it, you do not need to download the Android SDK or run ADB yourself from the command line. This extension is experimental. It runs on Win, Mac and Linux (ia32/x8_64).
 
-# How to run
+# How to install and run
 - Visit **[github.com/GoogleChrome/ADBPlugin/raw/master/out/npADBPlugin-crx.crx](https://github.com/GoogleChrome/ADBPlugin/raw/master/out/npADBPlugin-crx.crx)** and download extension.
 - Go to `about:extensions` and drop that file there.
 - Click little Android icon next to address bar.
