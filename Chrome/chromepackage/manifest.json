@@ -1,8 +1,9 @@
 {
   "name": "ADB",
-  "version": "0.9.2",
+  "version": "0.9.3",
   "description": "ADB Plugin",
   "manifest_version": 2,
+  "icons": { "128": "icon_128.png", "48": "icon_48.png" },
 
   "background": {
     "page":"background.html"
@@ -12,11 +13,13 @@
       "19": "off_19.png",
       "38": "off_38.png"
     },
-    "default_title": "Start ADB",
+    "default_title": "ADB Plugin",
     "default_popup": "popup.html"
   },
   "plugins": [
     { "path": "npADBPlugin.plugin", "public": true },
-    { "path": "npADBPlugin.dll", "public": true }
+    { "path": "npADBPlugin.dll", "public": true },
+    { "path": "npADBPlugin-x64.so", "public": true },
+    { "path": "npADBPlugin-ia32.so", "public": true }
   ]
 }

@@ -27,6 +27,10 @@ else (WIN32)
     add_definitions("-DOS_POSIX")
 endif (WIN32)
 
+if (APPLE)
+    add_definitions("-DOS_MACOSX")
+endif (APPLE)
+
 # Generated files are stored in ${GENERATED} by the project configuration
 SET_SOURCE_FILES_PROPERTIES(
     ${GENERATED}

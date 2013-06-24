@@ -136,10 +136,15 @@ std::string ADBPluginAPI::adb(const std::string& command)
         return "Error: could not read response";
     return std::string(temp, count);
 #else
+
+#if defined(OS_MACOSX)
     for (int i = 0; i < 4; ++i)
         plugin_path = plugin_path.substr(0, plugin_path.rfind("/"));
-
     std::string adb_command = "/bin/sh '" + plugin_path + "/mac/adb_command.sh' " + command;
+#else
+    plugin_path = plugin_path.substr(0, plugin_path.rfind("/"));
+    std::string adb_command = "/bin/sh '" + plugin_path + "/linux/adb_command.sh' " + command;
+#endif  // defined(OS_MACOSX)
 
     FILE * pPipe;
     char buffer[2048];
@@ -151,7 +156,7 @@ std::string ADBPluginAPI::adb(const std::string& command)
         response += buffer;
     pclose(pPipe);
     return response;
-#endif
+#endif  // defined(OS_WIN)
 }
 
 ADBPluginPtr ADBPluginAPI::getPlugin()
