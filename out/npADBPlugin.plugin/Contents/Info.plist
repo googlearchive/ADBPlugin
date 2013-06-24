@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BuildMachineOSBuild</key>
+	<string>12D78</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>npADBPlugin</string>
+	<key>CFBundleGetInfoString</key>
+	<string>npADBPlugin 0.9.1, Copyright 2013 Chromium Authors</string>
+	<key>CFBundleIdentifier</key>
+	<string>com..npADBPlugin</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BRPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>npADBPlugin 0.9.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.9.1</string>
+	<key>CFPlugInDynamicRegisterFunction</key>
+	<string></string>
+	<key>CFPlugInDynamicRegistration</key>
+	<string>NO</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>00000000-0000-0000-0000-000000000000</key>
+		<string>MyFactoryFunction</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>00000000-0000-0000-0000-000000000000</key>
+		<array>
+			<string>00000000-0000-0000-0000-000000000000</string>
+		</array>
+	</dict>
+	<key>CFPlugInUnloadFunction</key>
+	<string></string>
+	<key>DTCompiler</key>
+	<string></string>
+	<key>DTPlatformBuild</key>
+	<string>4H512</string>
+	<key>DTPlatformVersion</key>
+	<string>GM</string>
+	<key>DTSDKBuild</key>
+	<string>12D75</string>
+	<key>DTSDKName</key>
+	<string>macosx10.8</string>
+	<key>DTXcode</key>
+	<string>0461</string>
+	<key>DTXcodeBuild</key>
+	<string>4H512</string>
+	<key>WebPluginDescription</key>
+	<string>ADB Daemon Plugin</string>
+	<key>WebPluginMIMETypes</key>
+	<dict>
+		<key>application/x-adbplugin</key>
+		<dict>
+			<key>WebPluginExtensions</key>
+			<array>
+				<string></string>
+			</array>
+			<key>WebPluginTypeDescription</key>
+			<string>ADB Daemon Plugin</string>
+		</dict>
+	</dict>
+	<key>WebPluginName</key>
+	<string>ADB</string>
+</dict>
+</plist>

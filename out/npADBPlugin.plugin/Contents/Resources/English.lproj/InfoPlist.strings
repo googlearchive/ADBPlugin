@@ -1,0 +1,4 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "npADBPlugin.plugin";
+NSHumanReadableCopyright = "Copyright 2013 Chromium Authors";

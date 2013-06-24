@@ -7,22 +7,20 @@ var plugin = document.getElementById('adb-plugin');
 chrome.browserAction.setBadgeBackgroundColor({color: '#070'});
 
 function update(oneTime) {
-  if (plugin.isServerRunning()) {
+  var devicesMessage = plugin.devices();
+  var serverIsRunning = devicesMessage.substr(0, 4) === "OKAY";
+  if (serverIsRunning) {
+    var devices = devicesMessage.substr(8).split("\n");
     chrome.browserAction.setIcon({
       path: {
         19: 'on_19.png',
         38: 'on_38.png'
       }
     });
-    var devices = plugin.devices().split('\n');
-    devices = devices.slice(1); // Trim the header
-    var count = 0;
-    for (var i = 0; i < devices.length; ++i) {
-      if (devices[i] !== '')
-        count++;
-    }
-    if (count) {
-      chrome.browserAction.setBadgeText({text: String(count)});
+
+    var deviceCount = devices.length - 1;
+    if (deviceCount) {
+      chrome.browserAction.setBadgeText({text: String(deviceCount)});
     } else {
       chrome.browserAction.setBadgeText({text: ''});
     }
@@ -38,7 +36,7 @@ function update(oneTime) {
     chrome.browserAction.setTitle({title: 'Start ADB'});
   }
   if (!oneTime)
-    setTimeout(update, 1000);
+    setTimeout(update, 3000);
 }
 
 update();
@@ -52,7 +50,7 @@ function stop() {
 }
 
 function isServerRunning() {
-  return plugin.isServerRunning();
+  return plugin.devices().substr(0, 4) === "OKAY";
 }
 
 function devices() {

@@ -1,6 +1,6 @@
 {
   "name": "ADB",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "ADB Plugin",
   "manifest_version": 2,
 
@@ -16,6 +16,7 @@
     "default_popup": "popup.html"
   },
   "plugins": [
-    { "path": "ADB_x86_64.plugin", "public": true }
+    { "path": "npADBPlugin.plugin", "public": true },
+    { "path": "npADBPlugin.dll", "public": true }
   ]
 }
