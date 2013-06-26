@@ -24,7 +24,6 @@ function update(oneTime) {
     } else {
       chrome.browserAction.setBadgeText({text: ''});
     }
-    chrome.browserAction.setTitle({title: 'Stop ADB'});
   } else {
     chrome.browserAction.setIcon({
       path: {
@@ -33,7 +32,6 @@ function update(oneTime) {
       }
     });
     chrome.browserAction.setBadgeText({text: ''});
-    chrome.browserAction.setTitle({title: 'Start ADB'});
   }
   if (!oneTime)
     setTimeout(update, 3000);
