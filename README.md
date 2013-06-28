@@ -9,14 +9,17 @@ ADB Plugin is a Chrome Extension that runs ADB daemon and enables remote debuggi
 - Click little Android icon next to address bar.
 - For **Windows**, make sure you have ADB communication [drivers](https://dl.google.com/android/repository/usb_driver_r07-windows.zip) installed.
 
-## How to build (Mac)
-- Get FireBreath at [firebreath.org/display/documentation/Download](http://www.firebreath.org/display/documentation/Download)
-- Place ADBPlugin under `firebreath/projects/ADBPlugin`
-- Run `./prepmac.sh && xcodebuild ARCHS=i386 ONLY_ACTIVE_ARCH=NO -configuration Release -project build/FireBreath.xcodeproj`
-- The build will be available at `build/projects/ADBPlugin/gen/npADBPlugin-crx.crx`.
+You need both USB debugging for your phone enabled as well as remote debugging turned on inside of Chrome for Android. Follow through for [details on how to enable these settings](https://developers.google.com/chrome-developer-tools/docs/remote-debugging)..
 
 ## Screenshots
 
 ![](http://i.imgur.com/q4qn1le.png)
 
 ![](http://i.imgur.com/q90tutk.png)
+
+
+## Building this extension (Mac)
+- Get FireBreath at [firebreath.org/display/documentation/Download](http://www.firebreath.org/display/documentation/Download)
+- Place ADBPlugin under `firebreath/projects/ADBPlugin`
+- Run `./prepmac.sh && xcodebuild ARCHS=i386 ONLY_ACTIVE_ARCH=NO -configuration Release -project build/FireBreath.xcodeproj`
+- The build will be available at `build/projects/ADBPlugin/gen/npADBPlugin-crx.crx`.
