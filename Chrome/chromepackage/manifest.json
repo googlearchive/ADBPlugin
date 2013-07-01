@@ -1,6 +1,6 @@
 {
   "name": "ADB",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "ADB Plugin for remote debugging Chrome on Android",
   "manifest_version": 2,
   "icons": {
