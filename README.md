@@ -21,5 +21,8 @@ You need both USB debugging for your phone enabled as well as remote debugging t
 ## Building this extension (Mac)
 - Get FireBreath at [firebreath.org/display/documentation/Download](http://www.firebreath.org/display/documentation/Download)
 - Place ADBPlugin under `firebreath/projects/ADBPlugin`
-- Run `./prepmac.sh && xcodebuild ARCHS=i386 ONLY_ACTIVE_ARCH=NO -configuration Release -project build/FireBreath.xcodeproj`
-- The build will be available at `build/projects/ADBPlugin/gen/npADBPlugin-crx.crx`.
+- Run the following to build and create a zip (for CWS):
+```sh
+./prepmac.sh && xcodebuild ARCHS=i386 ONLY_ACTIVE_ARCH=NO -configuration Release -project build/FireBreath.xcodeproj && find ./build/projects/ADBPlugin/gen/npADBPlugin-crx -path '*/.*' -prune -o -type f -print | zip ./ADBPlugin-CWS.zip -@
+```
+- The build will be available at `build/projects/ADBPlugin/gen/npADBPlugin-crx.crx`. The zip will be in the current path.
