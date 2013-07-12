@@ -3,9 +3,18 @@
 ADB Plugin is a Chrome Extension that runs ADB daemon and enables remote debugging for mobile. With it, you do not need to download the Android SDK or run ADB yourself from the command line. This extension is experimental. It runs on Win, Mac and Linux (ia32/x86_64). For full installation directions, click through to [developers.google.com](https://developers.google.com/chrome-developer-tools/docs/remote-debugging).
 
 ## How to install and run
+
+Special Notes:
+
+* **Linux**: If you encounter "error while loading shared libraries" during installation, install the `ia32-libs` package.
+* **Windows**, make sure you have ADB communication [drivers](https://dl.google.com/android/repository/usb_driver_r07-windows.zip) installed.
+* **Windows 8**: Unfortunately you cannot install from the Chrome Web Store. Right click and download [this CRX file](https://github.com/GoogleChrome/ADBPlugin/blob/master/out/npADBPlugin-crx.crx?raw=true) then open `about:extensions` in Chrome and drag the CRX onto that page to install. This extension will not automatically stay up to date.
+ 
+Normal install:
+
 - [Install from the Chrome Web Store](https://chrome.google.com/webstore/detail/adb/dpngiggdglpdnjdoaefidgiigpemgage)
 - Click little Android icon next to address bar.
-- For **Windows**, make sure you have ADB communication [drivers](https://dl.google.com/android/repository/usb_driver_r07-windows.zip) installed.
+
 
 You need both USB debugging for your phone enabled as well as remote debugging turned on inside of Chrome for Android. Follow through for [details on how to enable these settings](https://developers.google.com/chrome-developer-tools/docs/remote-debugging)..
 
