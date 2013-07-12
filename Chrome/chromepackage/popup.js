@@ -10,6 +10,7 @@
 var devices = document.getElementById('devices');
 var start = document.getElementById('start');
 var stop = document.getElementById('stop');
+var help = document.getElementById('help');
 
 if (chrome.extension.getBackgroundPage().isServerRunning()) {
   start.classList.add('disabled');
@@ -36,5 +37,10 @@ stop.addEventListener('click', function () {
   if (stop.classList.contains('disabled'))
     return;
   chrome.extension.getBackgroundPage().stop();
+  window.close();
+}, false);
+
+help.addEventListener('click', function () {
+  chrome.extension.getBackgroundPage().help();
   window.close();
 }, false);

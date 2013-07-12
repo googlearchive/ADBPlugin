@@ -54,3 +54,7 @@ function isServerRunning() {
 function devices() {
   chrome.tabs.create({url:'chrome://inspect'});
 }
+
+function help(url) {
+  chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
+}
