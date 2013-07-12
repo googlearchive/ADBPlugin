@@ -7,7 +7,7 @@ ADB Plugin is a Chrome Extension that runs ADB daemon and enables remote debuggi
 Special Notes:
 
 * **Linux**: If you encounter "error while loading shared libraries" during installation, install the `ia32-libs` package.
-* **Windows**, make sure you have ADB communication [drivers](https://dl.google.com/android/repository/usb_driver_r07-windows.zip) installed.
+* **Windows**, make sure you have [ADB USB communication drivers](http://developer.android.com/tools/extras/oem-usb.html) installed. ([Google Nexus USB driver here](https://dl.google.com/android/repository/usb_driver_r07-windows.zip))
 * **Windows 8**: Unfortunately you cannot install from the Chrome Web Store. Right click and download [this CRX file](https://github.com/GoogleChrome/ADBPlugin/blob/master/out/npADBPlugin-crx.crx?raw=true) then open `about:extensions` in Chrome and drag the CRX onto that page to install. This extension will not automatically stay up to date.
  
 Normal install:
