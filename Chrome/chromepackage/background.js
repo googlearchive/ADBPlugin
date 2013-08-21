@@ -55,6 +55,12 @@ function devices() {
   chrome.tabs.create({url:'chrome://inspect'});
 }
 
+function openUrl(url) {
+  console.log("openUrl(" + url + ")");
+  var s = plugin.openUrl(url);
+  console.log(s);
+}
+
 function help(url) {
   chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
 }

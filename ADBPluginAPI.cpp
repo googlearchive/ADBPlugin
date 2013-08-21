@@ -44,6 +44,11 @@ FB::variant ADBPluginAPI::killServer()
     return adb("kill-server");
 }
 
+FB::variant ADBPluginAPI::openUrl(const std::string& url)
+{
+    return adb("shell am start -a android.intent.action.VIEW -d "  + url);
+}
+
 FB::variant ADBPluginAPI::devices()
 {
     struct sockaddr_in client;
