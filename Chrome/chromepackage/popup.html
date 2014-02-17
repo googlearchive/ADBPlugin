@@ -8,7 +8,7 @@ body {
   font-size: 12px;
   margin: 4px 0;
   padding: 0;
-  width: 150px;
+  width: 170px;
 }
 
 body.platform-linux {
@@ -23,25 +23,26 @@ body.platform-windows {
   font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-div.item {
+.item {
   color: black;
   padding-left: 16px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+  text-decoration: none;
 }
 
-div.item:not(.disabled):hover {
+.item:not(.disabled):hover {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(101, 140, 245)), to(rgb(41, 103, 242)));
   border-top: 1px solid rgb(25, 91, 232);
   border-bottom: 1px solid rgb(25, 91, 232);
   color: white;
 }
 
-div.item.disabled {
+.item.disabled {
   color: rgb(150, 150, 150);
 }
 
-div.separator {
+.separator {
   border-bottom: 1px solid rgb(228, 228, 228);
   margin: 3px 0;
 }
@@ -59,7 +60,8 @@ a.trigger { text-decoration: none;}
 </head>
 <body>
 
-<div class="separator"></div>
+
+
 <a href="#" class="trigger"><div id="devices" class="item devices">View Inspection Targets</div></a>
 <div class="separator"></div>
 
@@ -67,11 +69,11 @@ a.trigger { text-decoration: none;}
 
 Please click <em>View Devices</em> above and enable "Discover USB devices".</p>
 
-<a href="#" class="trigger"><div id="help" class="item">Help</div></a>
+<a href="#" class="trigger"><div id="help" href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging" class="item">Help</div></a>
 
 
 <p>Any issues, <a href="https://github.com/GoogleChrome/ADBPlugin">file a ticket</a>.</p>
-</body>
+
 
 <script type="text/javascript" src="popup.js"></script>
 

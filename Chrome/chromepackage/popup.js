@@ -27,3 +27,8 @@ help.addEventListener('click', function () {
   chrome.extension.getBackgroundPage().help();
   window.close();
 }, false);
+
+help.addEventListener('click', function () {
+  chrome.extension.getBackgroundPage().help();
+  window.close();
+}, false);

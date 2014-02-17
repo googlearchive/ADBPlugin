@@ -1,13 +1,28 @@
-# The ADB Plugin Chrome extension for remote debugging
+
+
+**This extension is now deprecated.** Most users will be able to use the built-in remote debugging with Chrome that doesn't need a Chrome extension or ADB. Please check out: [Remote Debugging Chrome on Android](https://developers.google.com/chrome-developer-tools/docs/remote-debugging)
+
+For folks that want to use ADB, please follow the [remote debugging legacy workflow](https://developers.google.com/chrome-developer-tools/docs/remote-debugging-legacy).
+
+~ February 17, 2014
+
+<hr><hr><hr><hr>
 
 ADB Plugin is a Chrome Extension that runs ADB daemon and enables remote debugging for mobile. With it, you do not need to download the Android SDK or run ADB yourself from the command line. This extension is experimental. It runs on Win, Mac and Linux (ia32/x86_64). For full installation directions, click through to [developers.google.com](https://developers.google.com/chrome-developer-tools/docs/remote-debugging).
 
 ## How to install and run
-- Right-click and `Save Link As...` this link: **[github.com/GoogleChrome/ADBPlugin/raw/master/out/npADBPlugin-crx.crx](https://github.com/GoogleChrome/ADBPlugin/raw/master/out/npADBPlugin-crx.crx)**.
-- Go to `about:extensions`
-- Drag and drop the crx file onto `about:extensions`.
+
+Special Notes:
+
+* **Linux**: If you encounter "error while loading shared libraries" during installation, install the `ia32-libs` package.
+* **Windows**, make sure you have [ADB USB communication drivers](http://developer.android.com/tools/extras/oem-usb.html) installed. ([Google Nexus USB driver here](https://dl.google.com/android/repository/usb_driver_r07-windows.zip))
+* **Windows 8**: Unfortunately you cannot install from the Chrome Web Store. Right click and download [this CRX file](https://github.com/GoogleChrome/ADBPlugin/blob/master/out/npADBPlugin-crx.crx?raw=true) then open `about:extensions` in Chrome and drag the CRX onto that page to install. This extension will not automatically stay up to date.
+ 
+Normal install:
+
+- [Install from the Chrome Web Store](https://chrome.google.com/webstore/detail/adb/dpngiggdglpdnjdoaefidgiigpemgage)
 - Click little Android icon next to address bar.
-- For **Windows**, make sure you have ADB communication [drivers](https://dl.google.com/android/repository/usb_driver_r07-windows.zip) installed.
+
 
 You need both USB debugging for your phone enabled as well as remote debugging turned on inside of Chrome for Android. Follow through for [details on how to enable these settings](https://developers.google.com/chrome-developer-tools/docs/remote-debugging)..
 
@@ -21,5 +36,8 @@ You need both USB debugging for your phone enabled as well as remote debugging t
 ## Building this extension (Mac)
 - Get FireBreath at [firebreath.org/display/documentation/Download](http://www.firebreath.org/display/documentation/Download)
 - Place ADBPlugin under `firebreath/projects/ADBPlugin`
-- Run `./prepmac.sh && xcodebuild ARCHS=i386 ONLY_ACTIVE_ARCH=NO -configuration Release -project build/FireBreath.xcodeproj`
-- The build will be available at `build/projects/ADBPlugin/gen/npADBPlugin-crx.crx`.
+- Run the following to build and create a zip (for CWS):
+```sh
+./prepmac.sh && xcodebuild ARCHS=i386 ONLY_ACTIVE_ARCH=NO -configuration Release -project build/FireBreath.xcodeproj && find ./build/projects/ADBPlugin/gen/npADBPlugin-crx -path '*/.*' -prune -o -type f -print | zip ./ADBPlugin-CWS.zip -@
+```
+- The build will be available at `build/projects/ADBPlugin/gen/npADBPlugin-crx.crx`. The zip will be in the current path.

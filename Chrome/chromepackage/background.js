@@ -10,3 +10,7 @@ function devices() {
 function help(url) {
   chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
 }
+
+function help(url) {
+  chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
+}
