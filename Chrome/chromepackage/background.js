@@ -2,15 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-chrome.browserAction.setBadgeBackgroundColor({color: '#070'});
-
-chrome.browserAction.setIcon({
-  path: {
-    19: 'off_19.png',
-    38: 'off_38.png'
-  }
-});
-
 function devices() {
   chrome.tabs.create({url:'chrome://inspect'});
+}
+
+
+function help(url) {
+  chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
 }

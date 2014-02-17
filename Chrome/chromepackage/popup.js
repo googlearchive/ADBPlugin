@@ -7,11 +7,23 @@ else if (navigator.userAgent.match(/Linux/))
   document.body.classList.add('platform-linux');
 
 
-var devices = document.getElementById('devices');
+var devices = document.querySelectorAll('.devices');
+var help = document.getElementById('help');
 
-devices.addEventListener('click', function () {
+// inspect devices
+[].forEach.call( devices, function(elem){
 
-  chrome.extension.getBackgroundPage().devices();
+  elem.addEventListener('click', function () {
+
+    chrome.extension.getBackgroundPage().devices();
+    window.close();
+
+  }, false);
+
+});
+
+// help
+help.addEventListener('click', function () {
+  chrome.extension.getBackgroundPage().help();
   window.close();
-
 }, false);

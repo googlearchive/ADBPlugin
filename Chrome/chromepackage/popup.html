@@ -8,7 +8,7 @@ body {
   font-size: 12px;
   margin: 4px 0;
   padding: 0;
-  width: 120px;
+  width: 150px;
 }
 
 body.platform-linux {
@@ -50,11 +50,27 @@ div.separator {
   display: none;
 }
 
+.devices { cursor: pointer; }
+p { margin: 4px 3px; font-size: 90%; color: #555;}
+.separator + p { margin-top: 10px;}
+a.trigger { text-decoration: none;}
+
 </style>
 </head>
 <body>
-<div id="devices" class="item">View Devices</div>
+
 <div class="separator"></div>
+<a href="#" class="trigger"><div id="devices" class="item devices">View Inspection Targets</div></a>
+<div class="separator"></div>
+
+<p>Chrome can now connect to devices without ADB Plugin.
+
+Please click <em>View Devices</em> above and enable "Discover USB devices".</p>
+
+<a href="#" class="trigger"><div id="help" class="item">Help</div></a>
+
+
+<p>Any issues, <a href="https://github.com/GoogleChrome/ADBPlugin">file a ticket</a>.</p>
 </body>
 
 <script type="text/javascript" src="popup.js"></script>
