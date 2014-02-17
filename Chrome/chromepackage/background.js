@@ -6,11 +6,10 @@ function devices() {
   chrome.tabs.create({url:'chrome://inspect'});
 }
 
-
 function help(url) {
   chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
 }
 
-function help(url) {
-  chrome.tabs.create({url: "https://developers.google.com/chrome-developer-tools/docs/remote-debugging"});
+function ticket(url) {
+  chrome.tabs.create({url: "https://github.com/GoogleChrome/ADBPlugin"});
 }

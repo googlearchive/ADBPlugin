@@ -9,6 +9,7 @@ else if (navigator.userAgent.match(/Linux/))
 
 var devices = document.querySelectorAll('.devices');
 var help = document.getElementById('help');
+var ticket = document.getElementById('ticket');
 
 // inspect devices
 [].forEach.call( devices, function(elem){
@@ -28,7 +29,7 @@ help.addEventListener('click', function () {
   window.close();
 }, false);
 
-help.addEventListener('click', function () {
-  chrome.extension.getBackgroundPage().help();
+ticket.addEventListener('click', function () {
+  chrome.extension.getBackgroundPage().ticket();
   window.close();
 }, false);

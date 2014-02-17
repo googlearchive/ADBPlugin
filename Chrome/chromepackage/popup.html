@@ -52,8 +52,8 @@ body.platform-windows {
 }
 
 .devices { cursor: pointer; }
-p { margin: 4px 3px; font-size: 90%; color: #555;}
-.separator + p { margin-top: 10px;}
+p { margin: 6px 10px; font-size: 90%; color: #555;}
+
 a.trigger { text-decoration: none;}
 
 </style>
@@ -67,12 +67,14 @@ a.trigger { text-decoration: none;}
 
 <p>Chrome can now connect to devices without ADB Plugin.
 
-Please click <em>View Devices</em> above and enable "Discover USB devices".</p>
+Please click <em class="devices">View Inspection Targets</em> above and enable <em>Discover USB devices</em>.</p>
 
-<a href="#" class="trigger"><div id="help" href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging" class="item">Help</div></a>
+<div class="separator"></div>
+
+<a href="#" class="trigger"><div id="help" href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging" class="item">Help & Documentation</div></a>
 
 
-<p>Any issues, <a href="https://github.com/GoogleChrome/ADBPlugin">file a ticket</a>.</p>
+<a href="#" class="trigger"><div id="ticket" href="https://github.com/GoogleChrome/ADBPlugin" class="item">File a ticket</div></a>
 
 
 <script type="text/javascript" src="popup.js"></script>
