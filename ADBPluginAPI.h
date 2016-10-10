@@ -21,6 +21,7 @@ public:
         registerMethod("startServer", make_method(this, &ADBPluginAPI::startServer));
         registerMethod("killServer", make_method(this, &ADBPluginAPI::killServer));
         registerMethod("devices", make_method(this, &ADBPluginAPI::devices));
+        registerMethod("openUrl", make_method(this, &ADBPluginAPI::openUrl));
     }
 
     virtual ~ADBPluginAPI() {};
@@ -30,6 +31,7 @@ public:
     FB::variant startServer();
     FB::variant killServer();
     FB::variant devices();
+    FB::variant openUrl(const std::string& url);
 
 private:
     std::string adb(const std::string& command);

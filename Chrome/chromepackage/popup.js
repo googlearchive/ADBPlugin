@@ -10,6 +10,7 @@
 var devices = document.getElementById('devices');
 var start = document.getElementById('start');
 var stop = document.getElementById('stop');
+var openUrlButton = document.getElementById('openUrlButton');
 var help = document.getElementById('help');
 
 if (chrome.extension.getBackgroundPage().isServerRunning()) {
@@ -37,6 +38,15 @@ stop.addEventListener('click', function () {
   if (stop.classList.contains('disabled'))
     return;
   chrome.extension.getBackgroundPage().stop();
+  window.close();
+}, false);
+
+openUrlButton.addEventListener('click', function () {
+  // if (start.classList.contains('disabled'))
+  //   return;
+
+  var url = document.getElementById("openUrlInput").value;
+  chrome.extension.getBackgroundPage().openUrl(url);
   window.close();
 }, false);
 
